@@ -1,16 +1,8 @@
-import styled from '@emotion/styled';
+import CalculatorPage from "./pages/Calculator"
 
-import NxWelcome from './nx-welcome';
-
-const StyledApp = styled.div`
-  // Your style here
-`;
-
-export function App() {
+const App: React.FC = () => {
   return (
-    <StyledApp>
-      <NxWelcome title="capsula" />
-    </StyledApp>
+    <CalculatorPage />
   );
 }
 
