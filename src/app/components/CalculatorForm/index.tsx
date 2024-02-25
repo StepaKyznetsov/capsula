@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Box, Button, TextField } from '@mui/material';
-import { calculateCategory, calculateCoefficient } from '../../helpers/categoryCalculator';
+import { calculateCategory, calculateCoefficient } from '@/helpers/categoryCalculator';
 
 const CalculatorForm: React.FC = () => {
   const [customers, setCustomers] = useState<string>('');
@@ -30,7 +30,7 @@ const CalculatorForm: React.FC = () => {
   }
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, p: 2 }}>
       <TextField
         value={customers}
         onChange={handleCustomersChange}
