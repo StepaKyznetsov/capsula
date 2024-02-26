@@ -1,4 +1,4 @@
-import RoutesList from './routes';
+import RoutesWithAnimation, {LocationProvider} from './routes';
 import { Global, css } from '@emotion/react';
 
 const App: React.FC = () => {
@@ -10,6 +10,7 @@ const App: React.FC = () => {
             box-sizing: border-box;
           }
           html {
+            font-family: Arial, Helvetica, sans-serif;
             height: 100%;
           }
           body {
@@ -18,7 +19,10 @@ const App: React.FC = () => {
           }
         `}
       />
-      <RoutesList />
+      <LocationProvider>
+        <RoutesWithAnimation />
+      </LocationProvider>
+      
     </>
   );
 };

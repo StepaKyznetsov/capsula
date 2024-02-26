@@ -20,11 +20,7 @@ const CustomCalendar: React.FC = () => {
         initialView="dayGridMonth"
         locale={'ru'}
         events={events}
-        headerToolbar={{
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek'
-        }}
+        headerToolbar={false}
       />
     </Box>
   );
