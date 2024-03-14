@@ -1,27 +1,40 @@
-import { Box, CircularProgress, Typography } from '@mui/material';
 import { ComponentType, useEffect, useState } from 'react';
+import { Box, CircularProgress, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
 
 const SplashScreen = () => {
   return (
-    <Box
-      sx={{
-        height: '100vh',
-        width: '100vw',
-        display: 'flex',
-        alignItems: 'center',
-      }}
+    <motion.div
+      initial={{ opacity: 1, scale: 1 }}
+      animate={{ opacity: 0, scale: 0.5 }}
+      transition={{ delay: 3, duration: 1 }}
     >
-      <Box sx={{ width: '300px', margin: 'auto', overflow: 'hidden' }}>
-        <img
-          src="src/assets/splash.png"
-          alt="splash screen"
-          style={{ height: 'auto', maxWidth: '100%' }}
-        />
-        <Typography sx={{ textAlign: 'center' }}>
-          <CircularProgress />
-        </Typography>
-      </Box>
-    </Box>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <Box
+          sx={{
+            height: '100vh',
+            width: '100vw',
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          <Box sx={{ width: '300px', margin: 'auto', overflow: 'hidden' }}>
+            <img
+              src="src/assets/splash.png"
+              alt="splash screen"
+              style={{ height: 'auto', maxWidth: '100%' }}
+            />
+            <Typography sx={{ textAlign: 'center' }}>
+              <CircularProgress />
+            </Typography>
+          </Box>
+        </Box>
+      </motion.div>
+    </motion.div>
   );
 };
 
@@ -32,10 +45,12 @@ const withSplashScreen = (Component: ComponentType) => {
     useEffect(() => {
       setTimeout(() => {
         setLoading(false);
-      }, 2000);
+        sessionStorage.setItem('splash', 'true');
+      }, 4000);
     }, []);
 
-    if (loading) return <SplashScreen />;
+    // if (loading) return <SplashScreen />;
+    // if (loading && !sessionStorage.getItem('splash')) return <SplashScreen />;
     return <Component />;
   };
 };

@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import NavigationMobile from './NavigationMobile';
 
 const routeVariants = {
   initial: {
@@ -20,12 +19,9 @@ interface IPageWrapper {
 
 const PageWrapper: React.FC<IPageWrapper> = ({ children }) => {
   return (
-    <>
-      <motion.div variants={routeVariants} initial="initial" animate="final">
-        {children}
-      </motion.div>
-      <NavigationMobile />
-    </>
+    <motion.div variants={routeVariants} initial="initial" animate="final">
+      {children}
+    </motion.div>
   );
 };
 
