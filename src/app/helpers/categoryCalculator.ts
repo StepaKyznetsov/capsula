@@ -1,4 +1,4 @@
-import { coefs } from '../constants'
+import { coefs } from '@/constants'
 
 export const calculateCoefficient = (
   regularСustomers: number,

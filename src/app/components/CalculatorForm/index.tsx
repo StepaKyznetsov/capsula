@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Box, Button, TextField } from '@mui/material';
-import { calculateCategory, calculateCoefficient } from '../../helpers/categoryCalculator';
+import { Box } from '@mui/material';
+import { calculateCategory, calculateCoefficient } from '@/helpers/categoryCalculator';
+import { Input, Button } from '@mui/joy';
 
 const CalculatorForm: React.FC = () => {
   const [customers, setCustomers] = useState<string>('');
@@ -8,7 +9,7 @@ const CalculatorForm: React.FC = () => {
 
   const handleCustomersChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  ): void => {
     const {
       target: { value },
     } = e;
@@ -17,32 +18,33 @@ const CalculatorForm: React.FC = () => {
 
   const handleProfitChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  ): void => {
     const {
       target: { value },
     } = e;
     setProfit(value);
   };
 
-  const calculateMyCategory = () => {
+  const calculateMyCategory = (): number => {
     const coef = +calculateCoefficient(+customers, +profit);
     return calculateCategory(coef);
   }
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-      <TextField
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, p: 2 }}>
+      <Input
         value={customers}
         onChange={handleCustomersChange}
+        placeholder='Постоянные клиенты'
         type="number"
-        label="Постоянные клиенты"
+        // label="Постоянные клиенты"
         variant="outlined"
       />
-      <TextField
+      <Input
         value={profit}
         onChange={handleProfitChange}
         type="number"
-        label="Выручка"
+        placeholder="Выручка"
         variant="outlined"
       />
       <Button onClick={calculateMyCategory} variant="outlined">Рассчитать мою категорию</Button>
