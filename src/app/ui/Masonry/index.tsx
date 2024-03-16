@@ -14,6 +14,7 @@ const Masonry: React.FC<IMasonry> = ({ items }) => {
     >
       {items.map((e, index) => (
         <Box
+          key={index}
           sx={{
             breakInside: 'avoid',
             mb: 1,
