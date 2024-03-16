@@ -1,5 +1,5 @@
+import Stack from '@mui/joy/Stack';
 import Typography from '@mui/joy/Typography';
-import Box from '@mui/material/Box';
 
 interface IEpigraph {
   subtext: string;
@@ -8,17 +8,20 @@ interface IEpigraph {
 
 const Epigraph: React.FC<IEpigraph> = ({ subtext, text }) => {
   return (
-    <Box
+    <Stack
       sx={{
         ml: 'auto',
-        display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-end',
       }}
     >
-      <Typography component="span" sx={{ color: '#A9A9A9', fontSize: 12 }}>{subtext}</Typography>
-      <Typography component="span" sx={{ fontWeight: 700 }}>{text}</Typography>
-    </Box>
+      <Typography component="span" sx={{ color: '#A9A9A9', fontSize: 12 }}>
+        {subtext}
+      </Typography>
+      <Typography component="span" sx={{ fontWeight: 700 }}>
+        {text}
+      </Typography>
+    </Stack>
   );
 };
 

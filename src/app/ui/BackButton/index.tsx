@@ -1,23 +1,11 @@
-import IconButton from '@mui/joy/IconButton';
 import { useNavigate } from 'react-router-dom';
 import { ChevronLeft } from '@mui/icons-material';
+import RoundedButton from '../RoundedButton';
 
 const BackButton: React.FC = () => {
   const navigate = useNavigate();
-
-  return (
-    <IconButton
-      sx={{
-        border: 'gray 1px solid',
-        borderRadius: '100%',
-        stroke: '#ffffff',
-        strokeWidth: 1,
-      }}
-      onClick={() => navigate(-1)}
-    >
-      <ChevronLeft />
-    </IconButton>
-  );
+  
+  return <RoundedButton onClick={() => navigate(-1)} icon={<ChevronLeft />} />;
 };
 
 export default BackButton;

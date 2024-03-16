@@ -2,7 +2,7 @@
 // import dayGridPlugin from '@fullcalendar/daygrid';
 // import timeGridPlugin from '@fullcalendar/timegrid';
 // import interactionPlugin from '@fullcalendar/interaction';
-import { Box } from '@mui/material';
+import Box from '@mui/joy/Box';
 
 // const events = [{ title: 'Meeting', start: new Date() }];
 

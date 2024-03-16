@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-import eventsSlice from './features/events/eventsSlice'
-
+import eventsSlice from './features/eventsSlice'
+import statisticsSlice from './features/statisticsSlice';
 
 export const store = configureStore({
   reducer: {
-    events: eventsSlice
+    events: eventsSlice,
+    statistics: statisticsSlice
   },
 })
 

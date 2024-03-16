@@ -1,27 +1,30 @@
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
+import Container from '@mui/joy/Container';
+import NavigationMobile from './NavigationMobile';
 
-const routeVariants = {
-  initial: {
-    opacity: 0,
-  },
-  final: {
-    opacity: 1,
-    transition: {
-      duration: 0.3,
-      delay: 0.4,
-    },
-  },
-};
+// const routeVariants = {
+//   initial: {
+//     opacity: 0,
+//   },
+//   final: {
+//     opacity: 1,
+//     transition: {
+//       duration: 0.3,
+//       delay: 0.4,
+//     },
+//   },
+// };
 
 interface IPageWrapper {
-  children: React.ReactNode;
+  children: React.ReactNode[];
 }
 
 const PageWrapper: React.FC<IPageWrapper> = ({ children }) => {
   return (
-    <motion.div variants={routeVariants} initial="initial" animate="final">
+    <Container sx={{ p: 3, display: 'flex', flexDirection: 'column', gap: 3 }}>
       {children}
-    </motion.div>
+      <NavigationMobile />
+    </Container>
   );
 };
 

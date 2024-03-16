@@ -7,9 +7,10 @@ import Home from '@mui/icons-material/Home';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import NotesIcon from '@mui/icons-material/Notes';
+import Stack from '@mui/joy/Stack';
 
 const NavigationMobile: React.FC = () => {
-  const [value, setValue] = useState<string>('MAIN');
+  const [value, setValue] = useState<string>(MAIN);
   const { pathname } = useLocation();
   // const navigate = useNavigate();
 
@@ -34,9 +35,8 @@ const NavigationMobile: React.FC = () => {
         zIndex: 9999,
       }}
     >
-      <Box
+      <Stack
         sx={(theme) => ({
-          display: 'flex',
           flexDirection: 'row',
           width: 'fit-content',
           gap: 7,
@@ -51,8 +51,8 @@ const NavigationMobile: React.FC = () => {
         })}
       >
         {[
+          { icon: Home, value: MAIN + '1' },
           { icon: CalculateIcon, value: MAIN },
-          { icon: Home, value: MAIN },
           { icon: CalendarMonthIcon, value: CALENDAR },
           { icon: NotesIcon, value: NOTES },
         ].map((e, index) => (
@@ -67,7 +67,7 @@ const NavigationMobile: React.FC = () => {
             />
           </IconButton>
         ))}
-      </Box>
+      </Stack>
     </Box>
   );
 };

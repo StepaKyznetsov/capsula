@@ -1,10 +1,5 @@
 import { Global, css } from '@emotion/react';
-import BackButton from '@/ui/BackButton';
-import FuncButton from '@/ui/FuncButton';
-import InfoPanel from '@/ui/InfoPanel';
-import TextField from '@/ui/TextField';
-import NavigationMobile from '@/components/layout/NavigationMobile';
-import Epigraph from './ui/Epigraph';
+import MainPage from './pages/Main';
 
 const App: React.FC = () => {
   return (
@@ -23,25 +18,11 @@ const App: React.FC = () => {
           body {
             min-height: 100%;
             padding-bottom: 44px;
+            background-color: #fbfbfb;
           }
         `}
       />
-      <BackButton />
-      <div style={{ width: 100 }}>
-        <FuncButton
-          label="TEst"
-          onClick={() => console.log(1)}
-          variant="dark"
-        />
-      </div>
-      <InfoPanel color="primary">
-        <div style={{ width: 100, height: 100 }}>123</div>
-      </InfoPanel>
-      <TextField label="lable" placeholder="placeholder" />
-      <div>
-        <Epigraph text="Add Schedule" subtext="Be productive," />
-      </div>
-      <NavigationMobile />
+        <MainPage />  
       {/* <LocationProvider>
         <RoutesWithAnimation />
       </LocationProvider>

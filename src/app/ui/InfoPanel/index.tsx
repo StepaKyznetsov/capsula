@@ -1,6 +1,6 @@
 import Box from '@mui/joy/Box';
 
-type ColorType = 'primary' | 'secondary' | 'none';
+type ColorType = 'primary' | 'secondary' | 'neutral' | 'none' | 'dark';
 
 interface IInfoPanel {
   color: ColorType;
@@ -11,6 +11,8 @@ const background: Record<ColorType, string> = {
   primary: '#EE786B',
   secondary: '#FFE9E9',
   none: 'white',
+  neutral: '#F0F9FF',
+  dark: "black",
 };
 
 const InfoPanel: React.FC<IInfoPanel> = ({ color, children }) => {
@@ -18,7 +20,7 @@ const InfoPanel: React.FC<IInfoPanel> = ({ color, children }) => {
     <Box
       sx={{
         position: 'relative',
-        width: 'fit-content',
+        width: '100%',
         backgroundColor: background[color],
         borderRadius: 14,
         px: 1.5,

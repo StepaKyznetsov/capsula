@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Box } from '@mui/material';
 import { calculateCategory, calculateCoefficient } from '@/helpers/categoryCalculator';
-import { Input, Button } from '@mui/joy';
+import { Input, Button, Stack } from '@mui/joy';
 
 const CalculatorForm: React.FC = () => {
   const [customers, setCustomers] = useState<string>('');
@@ -31,7 +30,7 @@ const CalculatorForm: React.FC = () => {
   }
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, p: 2 }}>
+    <Stack sx={{ flexDirection: 'column', gap: 2, p: 2 }}>
       <Input
         value={customers}
         onChange={handleCustomersChange}
@@ -48,7 +47,7 @@ const CalculatorForm: React.FC = () => {
         variant="outlined"
       />
       <Button onClick={calculateMyCategory} variant="outlined">Рассчитать мою категорию</Button>
-    </Box>
+    </Stack>
   );
 };
 
